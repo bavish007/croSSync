@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>croSSync</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../scripts/shared/config.js" defer></script>
+  </head>
+  <body>
+    <div class="heading">
+      <img id="croSSync_logo" src="../assets/logo128.png" alt="croSSync Logo" />
+      <b>&nbsp;croSSync</b>
+    </div>
+    <p class="tagline">Automatically push your problem solution from multiple platforms to GitHub</p>
+
+    <div id="solve_and_push_phase" class="statistics hidden">
+      <div class="total_div">Problems Solved : <span id="successful_submissions">&nbsp;0</span></div>
+      <div class="total_div"><span class="difficulty-school">&ensp; &ensp; School </span>&nbsp;:&nbsp;<span id="successful_submissions_school">0</span></div>
+      <div class="total_div"><span class="difficulty-basic">&ensp; &ensp; Basic </span>&nbsp;:&nbsp;<span id="successful_submissions_basic">0</span></div>
+      <div class="total_div"><span class="difficulty-easy">&ensp; &ensp; Easy </span>&nbsp;:&nbsp;<span id="successful_submissions_easy">0</span></div>
+      <div class="total_div"><span class="difficulty-medium">&ensp; &ensp; Medium </span>&nbsp;:&nbsp;<span id="successful_submissions_medium">0</span></div>
+      <div class="total_div"><span class="difficulty-hard">&ensp; &ensp; Hard </span>&nbsp;:&nbsp;<span id="successful_submissions_hard">0</span></div>
+      <div class="total_div"><span>&ensp; &ensp; Repository </span>&nbsp;:&nbsp;<span id="repository_link">No Repository Linked</span></div>
+      <button id="unlinkRepository">Unlink Repository</button>
+      <hr />
+    </div>
+
+    <div id="link_repo_phase" class="link_repository hidden">
+      <hr />
+      <h3 id="username" class="hidden">Hi there!</h3>
+      <h3>Step - 1</h3>
+      <p>Do you want to create a new Repository or link an existing one?</p>
+      <form>
+        <div class="link_repository_options">
+          <div>
+            <input id="create_new" name="radio" value="new_repo" type="radio" checked />
+            <label for="create_new"><span></span><b>Create a New Repository</b></label>
+          </div>
+          <div>
+            <input id="link_existing" name="radio" value="old_repo" type="radio" />
+            <label for="link_existing"><span></span><b>Link an existing Repository</b></label>
+          </div>
+        </div>
+        <br />
+        <hr />
+        <h3>Step - 2</h3>
+        <p>Enter the name of new Private Repository / existing Repository :</p>
+        <input autocomplete="off" id="repositoryNameTextField" type="text" placeholder="Repository Name" />
+        <button id="linkRepositoryButton" type="button">Get Started</button>
+      </form>
+    </div>
+
+    <div class="acknowledgement">
+      <p hidden id="error_info"></p>
+      <p hidden id="success_acknowledgement"></p>
+      <p hidden id="unlinkText">
+        Linked the wrong repo? <a id="unlinkAction">Unlink</a>.
+      </p>
+    </div>
+
+    <div class="star_on_github">
+      <a href="https://github.com/bavish007/croSSync" target="_blank" rel="noreferrer noopener">
+        &nbsp;Star '<span class="brand-cro">cro</span><span class="brand-sync">SSync</span>' on GitHub
+      </a>
+    </div>
+
+    <script src="../scripts/index.js" defer></script>
+    <script src="../scripts/shared/githubAuthentication.js" defer></script>
+  </body>
+  
+</html>

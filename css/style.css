@@ -1,0 +1,125 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0 12px;
+    background-color: #fff;
+    font-size: 0.9rem;
+    color: #000;
+    min-height: 100vh;
+}
+
+.total_div {
+    display: flex;
+    justify-content: center;
+}
+
+#solve_and_push_phase { font-size: 1rem; margin-top: 1rem; }
+
+.heading { font-size: 1.6rem; display: flex; align-items: center; justify-content: center; gap: 8px; margin: 16px auto 8px; }
+
+#croSSync_logo { height: 40px !important; margin-top: 0; }
+
+.tagline { font-size: 0.95rem; text-align: center; margin-top: 0; }
+
+.statistics {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.statistics .total_div { font-size: 1rem; }
+
+.link_repository { width: 85%; margin: 0 auto; }
+
+.link_repository h3 { text-align: center; font-size: 1.2rem; }
+
+.link_repository p { font-size: 1rem; text-align: center; }
+
+#repositoryNameTextField { display: block; border: 1px solid #ddd; border-radius: 8px; padding: 10px 12px; font-size: 1rem; margin: 0 auto; }
+
+#linkRepositoryButton { display: block; margin: 12px auto 0; font-size: 1rem !important; font-weight: 600 !important; }
+
+.acknowledgement {
+    width: 85%;
+    margin: 0 auto;
+}
+
+.acknowledgement p { text-align: center; font-size: 1rem; font-weight: bold; color: #008000; }
+
+#error_info {
+    color: #FF0000 !important;
+}
+
+.star_on_github { font-size: 1rem; text-align: center; margin: 20px 0; }
+
+.star_on_github a {
+    text-decoration: none;
+    color: black;
+}
+
+.star_on_github a:hover {
+    text-decoration: underline;
+}
+
+.link_repository_options {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.link_repository_options input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+}
+
+.link_repository_options input[type="radio"]+label { position: relative; padding-left: 2em; cursor: pointer; line-height: 1.5; font-size: 1rem; }
+
+.link_repository_options input[type="radio"]+label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.25em;
+    width: 0.8em;
+    height: 0.8em;
+    border: 0.1em solid #000;
+    border-radius: 50%;
+}
+
+.link_repository_options input[type="radio"]+label::after {
+    content: '';
+    position: absolute;
+    top: 0.25em;
+    left: 0.15em;
+    width: 0.6em;
+    height: 0.6em;
+    border-radius: 50%;
+    background: #008000;
+    opacity: 0;
+}
+
+.link_repository_options input[type="radio"]:checked+label::after {
+    opacity: 1;
+}
+
+#unlinkRepository {
+    background-color: #f6f8fa;
+    color: #24292e;
+}
+
+#unlinkRepository:hover {
+    background-color: #e7ebf0;
+}
+
+/* Utility Classes */
+.hidden { display: none !important; }
+
+/* Difficulty Colors */
+.difficulty-school { color: #2F8D46; }
+.difficulty-basic { color: #61A34D; }
+.difficulty-easy { color: #008000; }
+.difficulty-medium { color: #FFA500; }
+.difficulty-hard { color: #FF0000; }
+
+/* Brand Colors */
+.brand-cro { color: #2F8D46; }
+.brand-sync { color: #000; }

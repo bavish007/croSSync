@@ -1,0 +1,80 @@
+{
+  "manifest_version": 3,
+  "name": "croSSync",
+  "description": "Automatically pushes your solved coding problems from multiple platforms to a GitHub Repository of your choice.",
+  "homepage_url": "https://github.com/bavish007/croSSync",
+  "version": "1.0.0",
+  "author": "Bavish Reddy Muske",
+  "action": {
+    "default_popup": "html/popup.html",
+    "default_title": "croSSync"
+  },
+  "icons": {
+    "16": "assets/logo16.png",
+    "48": "assets/logo48.png",
+    "128": "assets/logo128.png"
+  },
+  "permissions": [
+    "scripting",
+    "storage",
+    "tabs",
+    "cookies",
+    "unlimitedStorage",
+    "webRequest"
+  ],
+  "host_permissions": [
+    "https://github.com/*",
+    "https://api.github.com/*",
+    "https://practice.geeksforgeeks.org/*",
+    "https://www.geeksforgeeks.org/*",
+    "https://leetcode.com/*"
+  ],
+  "background": {
+    "service_worker": "scripts/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://github.com/*"
+      ],
+      "js": [
+        "scripts/shared/config.js",
+        "scripts/shared/localSetup.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://practice.geeksforgeeks.org/*",
+        "https://www.geeksforgeeks.org/*"
+      ],
+      "js": [
+        "scripts/platforms/geeksForGeeks/geeksForGeeks.js"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://leetcode.com/problems/*"
+      ],
+      "js": [
+        "scripts/shared/upload.js",
+        "scripts/platforms/leetcode/leetcodeApi.js",
+        "scripts/platforms/leetcode/leetcodeHandler.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "scripts/platforms/geeksForGeeks/extractCode.js",
+        "scripts/platforms/geeksForGeeks/nodeDeletion.js"
+      ],
+      "matches": [
+        "https://practice.geeksforgeeks.org/*",
+        "https://www.geeksforgeeks.org/*"
+      ]
+    }
+  ]
+}
